@@ -91,3 +91,18 @@ public static ExecutorService newCachedThreadPool() {
                                       new SynchronousQueue<Runnable>());
     }
 ```
+- newScheduledThreadPool 
+定时线程池，该线程池可用于周期性地去执行任务，通常用于周期性的同步数据。
+
+scheduleAtFixedRate:是以固定的频率去执行任务，周期是指每次执行任务成功执行之间的间隔。
+
+schedultWithFixedDelay:是以固定的延时去执行任务，延时是指上一次执行成功之后和下一次开始执行的之前的时间。
+```
+public static ScheduledExecutorService newScheduledThreadPool(int var0) {
+        return new ScheduledThreadPoolExecutor(var0);
+    }
+
+    public static ScheduledExecutorService newScheduledThreadPool(int var0, ThreadFactory var1) {
+        return new ScheduledThreadPoolExecutor(var0, var1);
+    }
+```
